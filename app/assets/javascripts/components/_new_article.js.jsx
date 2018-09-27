@@ -3,6 +3,11 @@ const NewArticle = props => {
 
   return (
     <form
+      style={{
+        margin: "1em",
+        padding: "1em",
+        border: "1px solid #ddd"
+      }}
       onSubmit={e => {
         props.handleFormSubmit(formFields.title.value, formFields.text.value);
         e.target.reset();

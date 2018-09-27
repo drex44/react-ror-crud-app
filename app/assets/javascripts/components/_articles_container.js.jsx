@@ -88,7 +88,9 @@ class ArticlesContainer extends React.Component {
   render() {
     return (
       <div>
+        <h2>Add new article</h2>
         <NewArticle handleFormSubmit={this.handleFormSubmit} />
+        <h2>All articles</h2>
         <AllArticles
           articles={this.state.articles}
           handleDelete={this.handleDelete}

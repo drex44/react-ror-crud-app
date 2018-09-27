@@ -40,15 +40,25 @@ class Article extends React.Component {
       <p>{this.props.article.text}</p>
     );
     return (
-      <div>
+      <div
+        style={{
+          margin: "1em",
+          padding: "1em",
+          border: "1px solid #ddd"
+        }}
+      >
         {title}
         {text}
         <button onClick={() => this.handleEdit()}>
           {this.state.editable ? "Submit" : "Edit"}
         </button>
-        <button onClick={() => this.props.handleDelete(this.props.article.id)}>
-          Delete
-        </button>
+        {!this.state.editable && (
+          <button
+            onClick={() => this.props.handleDelete(this.props.article.id)}
+          >
+            Delete
+          </button>
+        )}
       </div>
     );
   }
